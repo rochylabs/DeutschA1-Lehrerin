@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { UNITS, getStartUnit, Unit } from "@/lib/units";
 
 const TYPE_ICON: Record<string, string> = {
@@ -38,7 +39,7 @@ export default function PlanPage() {
     <div className="flex flex-col min-h-screen">
       {/* Header */}
       <nav className="flex items-center justify-between px-6 py-4 border-b border-border bg-surface">
-        <Link href="/" className="text-xl font-bold text-primary">Genau</Link>
+        <Link href="/"><Image src="/genau-logo.svg" alt="Genau" width={120} height={37} priority /></Link>
         <div className="flex items-center gap-4">
           <span className="text-sm font-medium text-muted">⚡ {xp} XP</span>
           {level && <span className="bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full">{level}</span>}
