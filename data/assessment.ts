@@ -50,11 +50,55 @@ export const A2_QUESTIONS: Question[] = [
   { id: 15, type: "vocab", question: "What does 'trennbare Verben' mean?", options: ["irregular verbs", "separable verbs", "modal verbs", "reflexive verbs"], answer: "separable verbs" },
 ];
 
+export const A1_QUESTIONS_B: Question[] = [
+  // Vocab (5)
+  { id: 1, type: "vocab", question: "What does 'Tisch' mean?", options: ["Chair", "Table", "Desk", "Shelf"], answer: "Table" },
+  { id: 2, type: "vocab", question: "What is 'Brot' in English?", options: ["Butter", "Bread", "Cake", "Soup"], answer: "Bread" },
+  { id: 3, type: "vocab", question: "What does 'Fenster' mean?", options: ["Door", "Wall", "Window", "Floor"], answer: "Window" },
+  { id: 4, type: "vocab", question: "What is 'Apfel' in English?", options: ["Orange", "Banana", "Pear", "Apple"], answer: "Apple" },
+  { id: 5, type: "vocab", question: "What does 'Straße' mean?", options: ["Park", "Street", "Bridge", "Square"], answer: "Street" },
+  // Grammar (5)
+  { id: 6, type: "grammar", question: "Choose the correct article: ___ Kind", options: ["der", "die", "ein", "das"], answer: "das" },
+  { id: 7, type: "grammar", question: "Complete: Du ___ sehr nett.", options: ["bin", "ist", "bist", "sind"], answer: "bist" },
+  { id: 8, type: "grammar", question: "Choose the correct article: ___ Auto", options: ["der", "die", "das", "ein"], answer: "das" },
+  { id: 9, type: "grammar", question: "Complete: Sie ___ zwei Kinder.", options: ["haben", "hat", "habe", "habt"], answer: "hat" },
+  { id: 10, type: "grammar", question: "Complete: Ich ___ gern Kaffee.", options: ["trinkt", "trinkst", "trinken", "trinke"], answer: "trinke" },
+  // Reading (5)
+  { id: 11, type: "reading", question: "'Der Supermarkt schließt um 20 Uhr.' When does the supermarket close?", options: ["6 PM", "7 PM", "8 PM", "9 PM"], answer: "8 PM" },
+  { id: 12, type: "reading", question: "'Mein Bruder ist 25 Jahre alt.' How old is the brother?", options: ["20", "22", "25", "28"], answer: "25" },
+  { id: 13, type: "reading", question: "'Das Konzert beginnt um halb acht.' When does the concert start?", options: ["7:00", "7:30", "8:00", "8:30"], answer: "7:30" },
+  { id: 14, type: "reading", question: "'Ich lerne seit sechs Monaten Deutsch.' How long has the person been learning German?", options: ["3 months", "4 months", "5 months", "6 months"], answer: "6 months" },
+  { id: 15, type: "reading", question: "'Die Bibliothek ist am Wochenende geschlossen.' When is the library closed?", options: ["Weekdays", "Weekends", "Mondays", "Fridays"], answer: "Weekends" },
+];
+
+export const A2_QUESTIONS_B: Question[] = [
+  // Dativ (5)
+  { id: 1, type: "grammar", question: "Choose the correct dative article: Ich spreche mit ___ Ärztin.", options: ["die", "der", "den", "dem"], answer: "der" },
+  { id: 2, type: "grammar", question: "Complete: Er hilft ___ alten Mann.", options: ["die", "den", "dem", "der"], answer: "dem" },
+  { id: 3, type: "grammar", question: "Which preposition always takes the dative?", options: ["gegen", "durch", "nach", "um"], answer: "nach" },
+  { id: 4, type: "grammar", question: "Complete: Sie fährt ___ ihrer Schwester.", options: ["mit", "für", "durch", "gegen"], answer: "mit" },
+  { id: 5, type: "grammar", question: "Complete: Das Paket ist ___ meiner Mutter.", options: ["für", "von", "mit", "aus"], answer: "von" },
+  // Perfekt / Präteritum (5)
+  { id: 6, type: "grammar", question: "What is the Perfekt of 'kommen'?", options: ["hat gekommen", "ist gekommen", "hat gekommt", "ist gekommt"], answer: "ist gekommen" },
+  { id: 7, type: "grammar", question: "Complete: Ich ___ gestern krank. (war/hatte)", options: ["hatte", "war", "habe", "bin"], answer: "war" },
+  { id: 8, type: "grammar", question: "What is the Perfekt of 'essen'?", options: ["ist gegessen", "hat gegessen", "hat geessen", "ist geessen"], answer: "hat gegessen" },
+  { id: 9, type: "grammar", question: "Complete with Präteritum: Wir ___ damals in Hamburg.", options: ["waren", "wären", "hatten", "haben"], answer: "waren" },
+  { id: 10, type: "grammar", question: "Which verb uses 'sein' in Perfekt?", options: ["schreiben", "lesen", "bleiben", "trinken"], answer: "bleiben" },
+  // A2 vocab / reading (5)
+  { id: 11, type: "vocab", question: "What does 'der Vertrag' mean?", options: ["invoice", "receipt", "contract", "report"], answer: "contract" },
+  { id: 12, type: "vocab", question: "What does 'der Termin' mean?", options: ["terminal", "deadline", "appointment", "term"], answer: "appointment" },
+  { id: 13, type: "reading", question: "'Könntest du mir bitte helfen?' What is being asked?", options: ["Can you help me?", "You should help me.", "You must help me.", "I can help you."], answer: "Can you help me?" },
+  { id: 14, type: "reading", question: "'Das Hotel, das am See liegt, ist sehr teuer.' Where is the hotel?", options: ["Near the mountain", "By the lake", "In the city", "Near the forest"], answer: "By the lake" },
+  { id: 15, type: "vocab", question: "What does 'sich bewerben' mean?", options: ["to apply for a job", "to complain", "to introduce oneself", "to register"], answer: "to apply for a job" },
+];
+
 // Keep alias for any code still referencing ASSESSMENT_QUESTIONS
 export const ASSESSMENT_QUESTIONS = A1_QUESTIONS;
 
 export function getQuestions(picker: Picker): Question[] {
-  return picker === "A2" ? A2_QUESTIONS : A1_QUESTIONS;
+  const useSetB = Math.random() < 0.5;
+  if (picker === "A2") return useSetB ? A2_QUESTIONS_B : A2_QUESTIONS;
+  return useSetB ? A1_QUESTIONS_B : A1_QUESTIONS;
 }
 
 export function scoreToLevel(correct: number, picker: Picker): "A1.1" | "A1.2" | "A2.1" | "A2.2" {
