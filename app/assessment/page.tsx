@@ -100,6 +100,17 @@ export default function AssessmentPage() {
         >
           Start free assessment →
         </button>
+        <button
+          onClick={() => {
+            localStorage.setItem("genau_level", picker === "A2" ? "A2.1" : "A1.1");
+            localStorage.setItem("genau_xp", "0");
+            localStorage.setItem("genau_streak", "0");
+            router.push("/plan");
+          }}
+          className="text-sm text-muted underline decoration-dotted hover:text-foreground transition-colors"
+        >
+          Skip assessment — start at {picker === "A2" ? "A2.1" : "A1.1"}
+        </button>
       </div>
     );
   }
