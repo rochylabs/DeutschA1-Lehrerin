@@ -1,0 +1,26 @@
+<svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="160" height="160" rx="32" fill="#2D6A4F"/>
+
+  <!-- German flag stripe (left edge) -->
+  <rect x="18" y="36" width="8" height="22" fill="#1A1A1A" rx="2"/>
+  <rect x="18" y="60" width="8" height="22" fill="#CC0000" rx="2"/>
+  <rect x="18" y="84" width="8" height="22" fill="#FFCC00" rx="2"/>
+
+  <!-- G lettermark -->
+  <text x="86" y="118"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="100"
+    font-weight="700"
+    text-anchor="middle"
+    fill="#FFFFFF">G</text>
+
+  <!-- Checkmark badge -->
+  <rect x="96" y="28" width="38" height="22" rx="11" fill="#FFFFFF"/>
+  <text x="115" y="45"
+    font-family="sans-serif"
+    font-size="13"
+    font-weight="700"
+    text-anchor="middle"
+    fill="#2D6A4F">✓</text>
+</svg>

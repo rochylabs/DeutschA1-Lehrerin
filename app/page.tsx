@@ -1,11 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen">
       {/* Nav */}
       <nav className="flex items-center justify-between px-6 py-4 border-b border-border bg-surface">
-        <span className="text-xl font-bold text-primary tracking-tight">Genau</span>
+        <Image src="/genau-logo.svg" alt="Genau" width={120} height={37} priority />
 
       </nav>
 
