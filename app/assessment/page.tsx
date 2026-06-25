@@ -68,8 +68,11 @@ export default function AssessmentPage() {
 
   if (phase === "picker") {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen px-6 text-center gap-8 max-w-lg mx-auto">
-        <button onClick={() => router.push("/")} className="self-start text-sm text-muted hover:text-foreground transition-colors">← Home</button>
+      <div className="flex flex-col min-h-screen px-6 max-w-lg mx-auto">
+        <div className="pt-4">
+          <button onClick={() => router.push("/")} className="text-sm text-muted hover:text-foreground transition-colors">← Home</button>
+        </div>
+        <div className="flex flex-col items-center justify-center flex-1 text-center gap-8 py-10">
         <div>
           <h1 className="text-3xl font-bold text-foreground">Select your level</h1>
           <p className="text-muted mt-2">We'll tailor your assessment and learning plan to your level.</p>
@@ -112,14 +115,18 @@ export default function AssessmentPage() {
         >
           Skip assessment — start at {picker === "A2" ? "A2.1" : "A1.1"}
         </button>
+        </div>
       </div>
     );
   }
 
   if (phase === "intro") {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen px-6 text-center gap-6">
-        <button onClick={() => setPhase("picker")} className="self-start text-sm text-muted hover:text-foreground transition-colors">← Back</button>
+      <div className="flex flex-col min-h-screen px-6 max-w-lg mx-auto">
+        <div className="pt-4">
+          <button onClick={() => setPhase("picker")} className="text-sm text-muted hover:text-foreground transition-colors">← Back</button>
+        </div>
+        <div className="flex flex-col items-center justify-center flex-1 text-center gap-6 py-10">
         <h1 className="text-3xl font-bold text-foreground">Level Assessment</h1>
         <p className="text-muted max-w-sm leading-relaxed">
           15 quick {picker} questions to find your exact starting point. Takes about 5 minutes.
@@ -130,6 +137,7 @@ export default function AssessmentPage() {
         >
           Let&apos;s go →
         </button>
+        </div>
       </div>
     );
   }

@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   description: "Self-paced A1 German learning for newcomers in Germany",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="h-full">

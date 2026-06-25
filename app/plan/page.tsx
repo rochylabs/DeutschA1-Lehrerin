@@ -70,7 +70,7 @@ export default function PlanPage() {
             return (
               <div
                 key={u.id}
-                className={`flex items-center gap-4 rounded-2xl border px-5 py-4 transition-all ${
+                className={`flex items-center gap-3 rounded-2xl border px-4 py-4 transition-all ${
                   done
                     ? "border-primary/30 bg-primary/5"
                     : unlocked
@@ -78,19 +78,20 @@ export default function PlanPage() {
                     : "border-border bg-border/20 opacity-50"
                 }`}
               >
-                <span className="text-2xl w-8 text-center">{done ? "✅" : TYPE_ICON[u.type]}</span>
-                <div className="flex-1">
-                  <p className="font-semibold text-foreground text-sm">{u.title}</p>
-                  <p className="text-xs text-muted">{u.subtitle}</p>
-                </div>
-                <div className="flex flex-col items-end gap-1">
-                  <span className="text-xs font-medium text-accent">+{u.xp} XP</span>
-                  <span className="text-xs text-muted">{u.estimatedMinutes} min</span>
+                <span className="text-2xl w-8 shrink-0 text-center">{done ? "✅" : TYPE_ICON[u.type]}</span>
+                <div className="flex-1 min-w-0">
+                  <p className="font-semibold text-foreground text-sm truncate">{u.title}</p>
+                  <p className="text-xs text-muted truncate">{u.subtitle}</p>
+                  <p className="text-xs text-muted mt-0.5">
+                    <span className="text-accent font-medium">+{u.xp} XP</span>
+                    <span className="mx-1">·</span>
+                    {u.estimatedMinutes} min
+                  </p>
                 </div>
                 {unlocked && !done && (
                   <Link
                     href={`/learn/${u.slug}`}
-                    className="ml-2 text-xs font-semibold text-primary hover:underline whitespace-nowrap"
+                    className="shrink-0 text-xs font-semibold text-primary hover:underline"
                   >
                     Start →
                   </Link>
@@ -101,7 +102,7 @@ export default function PlanPage() {
         </div>
 
         {/* Exam link */}
-        <div className="border border-border rounded-2xl p-5 flex items-center gap-4 bg-surface">
+        <div className="border border-border rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center gap-3 bg-surface">
           <span className="text-3xl">📝</span>
           <div className="flex-1">
             <p className="font-semibold text-foreground">Practice the Goethe A1 Exam</p>
@@ -111,7 +112,7 @@ export default function PlanPage() {
             href="https://german-a1-prep.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs font-semibold text-primary hover:underline whitespace-nowrap"
+            className="text-sm font-semibold text-primary hover:underline"
           >
             Open →
           </a>
