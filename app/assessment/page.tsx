@@ -70,27 +70,36 @@ export default function AssessmentPage() {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen px-6 text-center gap-8 max-w-lg mx-auto">
         <div>
-          <h1 className="text-3xl font-bold text-foreground">Where are you starting?</h1>
+          <h1 className="text-3xl font-bold text-foreground">Select your level</h1>
           <p className="text-muted mt-2">We'll tailor your assessment and learning plan to your level.</p>
         </div>
         <div className="flex flex-col gap-4 w-full">
-          <button
-            onClick={() => { setPicker("A1"); setPhase("intro"); }}
-            className="flex flex-col items-start gap-1 border-2 border-border rounded-2xl px-6 py-5 hover:border-primary hover:bg-primary/5 transition-all text-left"
-          >
-            <span className="text-2xl">🌱</span>
-            <span className="font-bold text-foreground text-lg">Complete beginner</span>
-            <span className="text-sm text-muted">I'm new to German — start me at A1</span>
-          </button>
-          <button
-            onClick={() => { setPicker("A2"); setPhase("intro"); }}
-            className="flex flex-col items-start gap-1 border-2 border-border rounded-2xl px-6 py-5 hover:border-primary hover:bg-primary/5 transition-all text-left"
-          >
-            <span className="text-2xl">📖</span>
-            <span className="font-bold text-foreground text-lg">I know some German</span>
-            <span className="text-sm text-muted">I've studied before — assess me at A2</span>
-          </button>
+          {(["A1", "A2"] as Picker[]).map((p) => (
+            <button
+              key={p}
+              onClick={() => setPicker(p)}
+              className={`flex flex-col items-start gap-1 border-2 rounded-2xl px-6 py-5 transition-all text-left ${
+                picker === p
+                  ? "border-primary bg-primary/5"
+                  : "border-border hover:border-primary/40"
+              }`}
+            >
+              <span className="text-2xl">{p === "A1" ? "🌱" : "📖"}</span>
+              <span className="font-bold text-foreground text-lg">
+                {p === "A1" ? "Complete beginner" : "I know some German"}
+              </span>
+              <span className="text-sm text-muted">
+                {p === "A1" ? "I'm new to German — start me at A1" : "I've studied before — assess me at A2"}
+              </span>
+            </button>
+          ))}
         </div>
+        <button
+          onClick={() => setPhase("intro")}
+          className="w-full bg-primary text-white font-semibold px-8 py-3.5 rounded-full hover:bg-primary-light transition-colors"
+        >
+          Start free assessment →
+        </button>
       </div>
     );
   }
