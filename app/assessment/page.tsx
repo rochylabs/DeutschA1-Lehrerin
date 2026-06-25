@@ -69,6 +69,7 @@ export default function AssessmentPage() {
   if (phase === "picker") {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen px-6 text-center gap-8 max-w-lg mx-auto">
+        <button onClick={() => router.push("/")} className="self-start text-sm text-muted hover:text-foreground transition-colors">← Home</button>
         <div>
           <h1 className="text-3xl font-bold text-foreground">Select your level</h1>
           <p className="text-muted mt-2">We'll tailor your assessment and learning plan to your level.</p>
@@ -118,6 +119,7 @@ export default function AssessmentPage() {
   if (phase === "intro") {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen px-6 text-center gap-6">
+        <button onClick={() => setPhase("picker")} className="self-start text-sm text-muted hover:text-foreground transition-colors">← Back</button>
         <h1 className="text-3xl font-bold text-foreground">Level Assessment</h1>
         <p className="text-muted max-w-sm leading-relaxed">
           15 quick {picker} questions to find your exact starting point. Takes about 5 minutes.
