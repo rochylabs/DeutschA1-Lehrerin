@@ -26,18 +26,36 @@ const lesson: Lesson = {
     {
       type: "fill_blank",
       exercises: [
-        { sentence: "Meine ___ heißt Maria.", answer: "Mutter", hint: "Mother" },
-        { sentence: "Ich habe einen ___.", answer: "Bruder", hint: "Brother" },
-        { sentence: "Meine ___ wohnen in Hamburg.", answer: "Eltern", hint: "Parents" },
-        { sentence: "Mein ___ ist sehr alt.", answer: "Großvater", hint: "Grandfather" },
+        { sentence: "Meine ___ heißt Maria.", answer: "Mutter", hint: "Mother", explanation: "'Mutter' is feminine (die Mutter), so the possessive is 'meine'. Feminine nouns use 'meine', masculine use 'mein'." },
+        { sentence: "Ich habe einen ___.", answer: "Bruder", hint: "Brother", explanation: "'Bruder' is masculine (der Bruder). In the accusative case after 'haben', it becomes 'einen Bruder' — masculine changes in accusative." },
+        { sentence: "Meine ___ wohnen in Hamburg.", answer: "Eltern", hint: "Parents", explanation: "'Eltern' (parents) is always plural in German — there is no singular form. Plural nouns use 'meine' for the possessive." },
+        { sentence: "Mein ___ ist sehr alt.", answer: "Großvater", hint: "Grandfather", explanation: "'Großvater' is masculine (der Großvater), so the possessive is 'mein' (without -e). Masculine and neuter nouns use 'mein'." },
       ],
     },
     {
       type: "quiz",
       questions: [
-        { question: "What does 'die Schwester' mean?", options: ["brother", "mother", "sister", "aunt"], answer: "sister" },
-        { question: "How do you say 'my parents' in German?", options: ["mein Kind", "meine Eltern", "meine Tante", "mein Onkel"], answer: "meine Eltern" },
-        { question: "What does 'der Großvater' mean?", options: ["uncle", "father", "brother", "grandfather"], answer: "grandfather" },
+        {
+          question: "Was bedeutet 'die Schwester'?",
+          hint: "What does 'die Schwester' mean?",
+          options: ["brother", "mother", "sister", "aunt"],
+          answer: "sister",
+          explanation: "'Schwester' means sister. The feminine article 'die' is a clue — most female family members are feminine: die Mutter, die Tochter, die Tante.",
+        },
+        {
+          question: "Wie sagt man 'my parents' auf Deutsch?",
+          hint: "How do you say 'my parents' in German?",
+          options: ["mein Kind", "meine Eltern", "meine Tante", "mein Onkel"],
+          answer: "meine Eltern",
+          explanation: "'Eltern' is plural, so the possessive is 'meine'. The plural possessive for all genders is 'meine': meine Eltern, meine Kinder.",
+        },
+        {
+          question: "Was bedeutet 'der Großvater'?",
+          hint: "What does 'der Großvater' mean?",
+          options: ["uncle", "father", "brother", "grandfather"],
+          answer: "grandfather",
+          explanation: "'Groß' means big/great, 'Vater' means father — so 'Großvater' is literally 'great-father', i.e. grandfather.",
+        },
       ],
     },
   ],

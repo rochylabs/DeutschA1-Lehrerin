@@ -26,18 +26,36 @@ const lesson: Lesson = {
     {
       type: "fill_blank",
       exercises: [
-        { sentence: "Ich ___ einen Kaffee, bitte.", answer: "möchte", hint: "I would like…" },
-        { sentence: "Die ___, bitte!", answer: "Rechnung", hint: "The bill" },
-        { sentence: "Was ___ ein Wasser?", answer: "kostet", hint: "How much does it cost?" },
-        { sentence: "Ich kaufe ___ beim Bäcker.", answer: "Brot", hint: "Bread" },
+        { sentence: "Ich ___ einen Kaffee, bitte.", answer: "möchte", hint: "I would like…", explanation: "'Möchte' is the polite form of 'mögen' used for ordering. It's softer than 'will' (want) and is always the right choice in a café or restaurant." },
+        { sentence: "Die ___, bitte!", answer: "Rechnung", hint: "The bill", explanation: "'Rechnung' (bill) is feminine — die Rechnung. To ask for the bill, just say 'Die Rechnung, bitte!' — simple and universally understood." },
+        { sentence: "Was ___ ein Wasser?", answer: "kostet", hint: "How much does it cost?", explanation: "'Kosten' means 'to cost'. The er/sie/es form is 'kostet'. 'Was kostet…?' is the standard way to ask the price of something." },
+        { sentence: "Ich kaufe ___ beim Bäcker.", answer: "Brot", hint: "Bread", explanation: "'Brot' is neuter (das Brot) but often used without an article when bought in general — similar to 'I buy bread' in English." },
       ],
     },
     {
       type: "quiz",
       questions: [
-        { question: "How do you ask for the bill in German?", options: ["Was kostet das?", "Ich möchte essen.", "Die Rechnung, bitte!", "Zum Mitnehmen?"], answer: "Die Rechnung, bitte!" },
-        { question: "What does 'Ich möchte einen Tee' mean?", options: ["I have tea.", "I would like a tea.", "I buy tea.", "I drink tea."], answer: "I would like a tea." },
-        { question: "What is 'das Gemüse'?", options: ["meat", "bread", "milk", "vegetables"], answer: "vegetables" },
+        {
+          question: "Wie bittet man um die Rechnung auf Deutsch?",
+          hint: "How do you ask for the bill in German?",
+          options: ["Was kostet das?", "Ich möchte essen.", "Die Rechnung, bitte!", "Zum Mitnehmen?"],
+          answer: "Die Rechnung, bitte!",
+          explanation: "'Die Rechnung, bitte!' (The bill, please!) is all you need. In Germany, the waiter won't bring the bill until you ask — so you have to request it.",
+        },
+        {
+          question: "Was bedeutet 'Ich möchte einen Tee'?",
+          hint: "What does 'Ich möchte einen Tee' mean?",
+          options: ["I have tea.", "I would like a tea.", "I buy tea.", "I drink tea."],
+          answer: "I would like a tea.",
+          explanation: "'Möchte' = would like. It's the polite go-to for ordering. 'Einen Tee' is the accusative of 'ein Tee' — the object of your wanting.",
+        },
+        {
+          question: "Was ist 'das Gemüse'?",
+          hint: "What is 'das Gemüse'?",
+          options: ["meat", "bread", "milk", "vegetables"],
+          answer: "vegetables",
+          explanation: "'Gemüse' means vegetables. It is always singular in German — 'das Gemüse' — even when referring to multiple types. There is no plural form.",
+        },
       ],
     },
   ],

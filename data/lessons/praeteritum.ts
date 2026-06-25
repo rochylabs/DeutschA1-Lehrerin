@@ -70,21 +70,25 @@ const lesson: Lesson = {
           sentence: "Gestern ___ ich sehr müde.",
           answer: "war",
           hint: "Präteritum of 'sein' (to be)",
+          explanation: "'War' is the Präteritum of 'sein'. Even in casual spoken German, use 'war' and 'hatte' instead of Perfekt — 'ist gewesen' sounds unnatural.",
         },
         {
           sentence: "Er ___ keine Krankenversicherung.",
           answer: "hatte",
           hint: "Präteritum of 'haben' (to have)",
+          explanation: "'Hatte' is the Präteritum of 'haben'. Like 'war', it is always used in speech — even informal. Never say 'hat gehabt' in conversation.",
         },
         {
           sentence: "Sie ___ nicht, wo das Amt ist.",
           answer: "wusste",
           hint: "Präteritum of 'wissen' (to know)",
+          explanation: "'Wusste' is the Präteritum of 'wissen' (to know facts). In spoken German, modal-like verbs (wissen, kennen) also often appear in Präteritum.",
         },
         {
           sentence: "Wir ___ um 9 Uhr zur Schule.",
           answer: "gingen",
           hint: "Präteritum of 'gehen', wir-form",
+          explanation: "'Gingen' is the wir/sie-form of 'gehen' in Präteritum. The wir-form of irregular verbs = the ich-form + -en: ging → gingen.",
         },
       ],
     },
@@ -92,12 +96,15 @@ const lesson: Lesson = {
       type: "quiz",
       questions: [
         {
-          question: "What is the Präteritum of 'können' (ich-form)?",
+          question: "Was ist das Präteritum von 'können' in der ich-Form?",
+          hint: "What is the Präteritum of 'können' (ich-form)?",
           options: ["konnte", "gekannt", "kann", "könnten"],
           answer: "konnte",
+          explanation: "Modal verbs form their Präteritum by removing the umlaut and adding -te: können → konnte, müssen → musste, wollen → wollte.",
         },
         {
-          question: "Which sentence uses Präteritum correctly?",
+          question: "Welcher Satz verwendet das Präteritum korrekt?",
+          hint: "Which sentence uses Präteritum correctly?",
           options: [
             "Gestern ich war im Supermarkt.",
             "Gestern war ich im Supermarkt.",
@@ -105,9 +112,11 @@ const lesson: Lesson = {
             "Gestern habe ich war im Supermarkt.",
           ],
           answer: "Gestern war ich im Supermarkt.",
+          explanation: "In German, the verb must always be in position 2. When 'Gestern' starts the sentence, the verb 'war' comes next, then the subject 'ich'.",
         },
         {
-          question: "When do Germans use Präteritum in spoken language?",
+          question: "Wann verwenden Deutsche das Präteritum in der gesprochenen Sprache?",
+          hint: "When do Germans use Präteritum in spoken language?",
           options: [
             "For all past actions",
             "Only for 'sein' and 'haben' and modals",
@@ -115,6 +124,7 @@ const lesson: Lesson = {
             "Never — only Perfekt is spoken",
           ],
           answer: "Only for 'sein' and 'haben' and modals",
+          explanation: "In everyday speech, Germans use Perfekt for most verbs, but always use Präteritum for war/hatte and the modal verbs (konnte, musste, wollte, etc.).",
         },
       ],
     },

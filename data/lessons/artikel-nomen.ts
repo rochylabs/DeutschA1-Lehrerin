@@ -26,18 +26,36 @@ const lesson: Lesson = {
     {
       type: "fill_blank",
       exercises: [
-        { sentence: "___ Mann kommt aus Österreich.", answer: "Der", hint: "Mann is masculine" },
-        { sentence: "___ Frau heißt Petra.", answer: "Die", hint: "Frau is feminine" },
-        { sentence: "___ Kind spielt im Garten.", answer: "Das", hint: "Kind is neuter" },
-        { sentence: "___ Hund ist sehr groß.", answer: "Der", hint: "Hund is masculine" },
+        { sentence: "___ Mann kommt aus Österreich.", answer: "Der", hint: "Mann is masculine", explanation: "'Mann' is masculine, so it takes 'der'. Always learn a noun together with its article — 'der Mann', not just 'Mann'." },
+        { sentence: "___ Frau heißt Petra.", answer: "Die", hint: "Frau is feminine", explanation: "'Frau' is feminine, so it takes 'die'. Nouns ending in -in, -ung, -heit, -keit are almost always feminine (die)." },
+        { sentence: "___ Kind spielt im Garten.", answer: "Das", hint: "Kind is neuter", explanation: "'Kind' is neuter and takes 'das'. Diminutives ending in -chen or -lein are always neuter: das Mädchen, das Brötchen." },
+        { sentence: "___ Hund ist sehr groß.", answer: "Der", hint: "Hund is masculine", explanation: "'Hund' is masculine. Most male animals are masculine in German, matching biological gender." },
       ],
     },
     {
       type: "quiz",
       questions: [
-        { question: "What is the correct article for 'Haus'?", options: ["der", "die", "das", "ein"], answer: "das" },
-        { question: "Which noun is feminine?", options: ["Mann", "Hund", "Tisch", "Stadt"], answer: "Stadt" },
-        { question: "What does 'der' indicate about a noun?", options: ["It is feminine", "It is neuter", "It is masculine", "It is plural"], answer: "It is masculine" },
+        {
+          question: "Welcher Artikel gehört zu 'Haus'?",
+          hint: "What is the correct article for 'Haus'?",
+          options: ["der", "die", "das", "ein"],
+          answer: "das",
+          explanation: "'Haus' is neuter — das Haus. There's no simple rule, so learn each noun with its article from the start.",
+        },
+        {
+          question: "Welches Nomen ist feminin?",
+          hint: "Which noun is feminine?",
+          options: ["Mann", "Hund", "Tisch", "Stadt"],
+          answer: "Stadt",
+          explanation: "'Stadt' (city) is feminine — die Stadt. Tip: nouns ending in -dt or -ft are often feminine.",
+        },
+        {
+          question: "Was zeigt der Artikel 'der' über ein Nomen?",
+          hint: "What does 'der' indicate about a noun?",
+          options: ["It is feminine", "It is neuter", "It is masculine", "It is plural"],
+          answer: "It is masculine",
+          explanation: "'Der' marks masculine nouns in the nominative case. Note: 'die' is used for both feminine AND plural nouns.",
+        },
       ],
     },
   ],
