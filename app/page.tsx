@@ -6,9 +6,7 @@ export default function Home() {
       {/* Nav */}
       <nav className="flex items-center justify-between px-6 py-4 border-b border-border bg-surface">
         <span className="text-xl font-bold text-primary tracking-tight">Genau</span>
-        <Link href="/assessment" className="text-sm font-medium text-primary hover:underline">
-          Start Learning →
-        </Link>
+
       </nav>
 
       {/* Hero */}
@@ -37,7 +35,7 @@ export default function Home() {
       <section className="grid sm:grid-cols-3 gap-4 px-6 pb-16 max-w-4xl mx-auto w-full">
         {[
           { icon: "🎯", title: "Placement test", desc: "Know your exact starting point in under 5 minutes." },
-          { icon: "🗓️", title: "Structured plan", desc: "12 units covering all A1 topics, tailored to your level." },
+          { icon: "🗓️", title: "Structured plan", desc: "28 units covering all A1–A2 topics, tailored to your level." },
           { icon: "🔥", title: "Streaks & rewards", desc: "Daily goals, XP, and badges keep you coming back." },
         ].map((f) => (
           <div key={f.title} className="bg-surface rounded-2xl border border-border p-6 flex flex-col gap-3">
