@@ -18,7 +18,8 @@ export default function PlanPage() {
 
   useEffect(() => {
     const raw = localStorage.getItem("genau_level");
-    const lvl = (raw === "A1.1" || raw === "A1.2") ? raw : null;
+    const LEVELS = ["A1.1", "A1.2", "A2.1", "A2.2"] as const;
+    const lvl = LEVELS.includes(raw as never) ? (raw as typeof LEVELS[number]) : null;
     const xpVal = Number(localStorage.getItem("genau_xp") ?? 0);
     const completed = JSON.parse(localStorage.getItem("genau_completed") ?? "[]") as number[];
     setLevel(lvl);
@@ -62,7 +63,7 @@ export default function PlanPage() {
 
         {/* Unit list */}
         <div className="flex flex-col gap-3">
-          <h2 className="text-sm font-semibold uppercase tracking-wider text-muted">Your A1 Journey</h2>
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-muted">Your Learning Journey</h2>
           {UNITS.map((u) => {
             const done = completedIds.includes(u.id);
             const unlocked = isUnlocked(u);

@@ -1,22 +1,24 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { ASSESSMENT_QUESTIONS, scoreToLevel } from "@/data/assessment";
+import { getQuestions, scoreToLevel, Picker } from "@/data/assessment";
 
-type Phase = "intro" | "quiz" | "writing" | "submitting" | "done";
+type Phase = "picker" | "intro" | "quiz" | "writing" | "submitting" | "done";
 
 export default function AssessmentPage() {
   const router = useRouter();
-  const [phase, setPhase] = useState<Phase>("intro");
+  const [phase, setPhase] = useState<Phase>("picker");
+  const [picker, setPicker] = useState<Picker>("A1");
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [selected, setSelected] = useState<string | null>(null);
   const [writingText, setWritingText] = useState("");
   const [aiFeedback, setAiFeedback] = useState<string | null>(null);
-  const [level, setLevel] = useState<"A1.1" | "A1.2" | null>(null);
+  const [level, setLevel] = useState<"A1.1" | "A1.2" | "A2.1" | "A2.2" | null>(null);
 
-  const q = ASSESSMENT_QUESTIONS[current];
-  const total = ASSESSMENT_QUESTIONS.length;
+  const questions = getQuestions(picker);
+  const q = questions[current];
+  const total = questions.length;
 
   function pick(option: string) {
     setSelected(option);
@@ -30,8 +32,8 @@ export default function AssessmentPage() {
     if (current + 1 < total) {
       setCurrent(current + 1);
     } else {
-      const correct = ASSESSMENT_QUESTIONS.filter((q) => updated[q.id] === q.answer).length;
-      const lvl = scoreToLevel(correct);
+      const correct = questions.filter((q) => updated[q.id] === q.answer).length;
+      const lvl = scoreToLevel(correct, picker);
       setLevel(lvl);
       setPhase("writing");
     }
@@ -40,7 +42,7 @@ export default function AssessmentPage() {
   async function submitWriting() {
     setPhase("submitting");
     try {
-      const correct = ASSESSMENT_QUESTIONS.filter((q) => answers[q.id] === q.answer).length;
+      const correct = questions.filter((q) => answers[q.id] === q.answer).length;
       const res = await fetch("/api/assess", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -64,12 +66,50 @@ export default function AssessmentPage() {
     router.push("/plan");
   }
 
+  if (phase === "picker") {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen px-6 text-center gap-8 max-w-lg mx-auto">
+        <div>
+          <h1 className="text-3xl font-bold text-foreground">Select your level</h1>
+          <p className="text-muted mt-2">We'll tailor your assessment and learning plan to your level.</p>
+        </div>
+        <div className="flex flex-col gap-4 w-full">
+          {(["A1", "A2"] as Picker[]).map((p) => (
+            <button
+              key={p}
+              onClick={() => setPicker(p)}
+              className={`flex flex-col items-start gap-1 border-2 rounded-2xl px-6 py-5 transition-all text-left ${
+                picker === p
+                  ? "border-primary bg-primary/5"
+                  : "border-border hover:border-primary/40"
+              }`}
+            >
+              <span className="text-2xl">{p === "A1" ? "🌱" : "📖"}</span>
+              <span className="font-bold text-foreground text-lg">
+                {p === "A1" ? "Complete beginner" : "I know some German"}
+              </span>
+              <span className="text-sm text-muted">
+                {p === "A1" ? "I'm new to German — start me at A1" : "I've studied before — assess me at A2"}
+              </span>
+            </button>
+          ))}
+        </div>
+        <button
+          onClick={() => setPhase("intro")}
+          className="w-full bg-primary text-white font-semibold px-8 py-3.5 rounded-full hover:bg-primary-light transition-colors"
+        >
+          Start free assessment →
+        </button>
+      </div>
+    );
+  }
+
   if (phase === "intro") {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen px-6 text-center gap-6">
         <h1 className="text-3xl font-bold text-foreground">Level Assessment</h1>
         <p className="text-muted max-w-sm leading-relaxed">
-          15 quick questions to find your starting point. Takes about 5 minutes.
+          15 quick {picker} questions to find your exact starting point. Takes about 5 minutes.
         </p>
         <button
           onClick={() => setPhase("quiz")}
@@ -84,11 +124,10 @@ export default function AssessmentPage() {
   if (phase === "quiz") {
     return (
       <div className="flex flex-col min-h-screen px-6 py-10 max-w-lg mx-auto gap-6">
-        {/* Progress bar */}
         <div className="w-full bg-border rounded-full h-2">
           <div
             className="bg-primary h-2 rounded-full transition-all"
-            style={{ width: `${((current) / total) * 100}%` }}
+            style={{ width: `${(current / total) * 100}%` }}
           />
         </div>
         <span className="text-sm text-muted">{current + 1} / {total}</span>
@@ -131,7 +170,7 @@ export default function AssessmentPage() {
       <div className="flex flex-col min-h-screen px-6 py-10 max-w-lg mx-auto gap-6">
         <h2 className="text-2xl font-bold text-foreground">One more step</h2>
         <p className="text-muted leading-relaxed">
-          Write 2–4 sentences about yourself in German (or English if you&apos;re a complete beginner). Our AI will personalize your plan further.
+          Write 2–4 sentences about yourself in German. Our AI will personalize your plan further.
         </p>
         <textarea
           value={writingText}
@@ -167,7 +206,6 @@ export default function AssessmentPage() {
     );
   }
 
-  // done
   return (
     <div className="flex flex-col items-center justify-center min-h-screen px-6 text-center gap-6 max-w-md mx-auto">
       <div className="text-5xl">🎉</div>

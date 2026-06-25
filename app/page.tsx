@@ -7,14 +7,14 @@ export default function Home() {
       <nav className="flex items-center justify-between px-6 py-4 border-b border-border bg-surface">
         <span className="text-xl font-bold text-primary tracking-tight">Genau</span>
         <Link href="/assessment" className="text-sm font-medium text-primary hover:underline">
-          Start learning →
+          Start Learning →
         </Link>
       </nav>
 
       {/* Hero */}
       <section className="flex flex-col items-center justify-center flex-1 px-6 py-20 text-center gap-8">
         <div className="inline-flex items-center gap-2 bg-primary/10 text-primary text-sm font-medium px-4 py-1.5 rounded-full">
-          🇩🇪 Goethe A1 curriculum
+          🇩🇪 Goethe A1–A2 curriculum
         </div>
         <h1 className="text-4xl sm:text-5xl font-bold text-foreground leading-tight max-w-2xl">
           Learn German.<br />
@@ -28,13 +28,7 @@ export default function Home() {
             href="/assessment"
             className="inline-flex items-center justify-center gap-2 bg-primary text-white font-semibold px-8 py-3.5 rounded-full hover:bg-primary-light transition-colors text-base"
           >
-            Start free assessment →
-          </Link>
-          <Link
-            href="/plan"
-            className="inline-flex items-center justify-center gap-2 border border-border text-foreground font-medium px-8 py-3.5 rounded-full hover:bg-border/30 transition-colors text-base"
-          >
-            View learning plan
+            Start Learning →
           </Link>
         </div>
       </section>
