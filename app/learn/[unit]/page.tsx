@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { UNITS } from "@/lib/units";
 import { Lesson, LessonScreen, FlashCard, FillBlankExercise, QuizQuestion } from "@/data/types";
 
-const VALID_SLUGS = new Set(["guten-tag","ich-bin","meine-familie","artikel-nomen","wohnen","alltagsverben","zahlen-zeit","akkusativ","essen-trinken","modal-verben","in-der-stadt","a1-review","dativ","praeteritum","perfekt","trennbare-verben","wohnung-suchen","berufe-arbeit","gesundheit","reisen","freizeit","konjunktiv-ii","relativsaetze","a2-review"]);
+const VALID_SLUGS = new Set(["guten-tag","ich-bin","meine-familie","artikel-nomen","negation-possessiv","wohnen","alltagsverben","zahlen-zeit","akkusativ","essen-trinken","modal-verben","in-der-stadt","a1-review","dativ","praeteritum","perfekt","trennbare-verben","reflexive-verben","nebensaetze","wohnung-suchen","berufe-arbeit","gesundheit","reisen","wechselpraepositionen","freizeit","konjunktiv-ii","relativsaetze","a2-review"]);
 
 async function loadLesson(slug: string): Promise<Lesson | null> {
   if (!VALID_SLUGS.has(slug)) return null;
@@ -122,22 +122,31 @@ export default function LearnPage({ params }: { params: Promise<{ unit: string }
     return (
       <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6 max-w-md mx-auto">
         <div className="text-sm text-muted">{cardIndex + 1} / {cards.length}</div>
-        <button
+        <div
           onClick={() => setFlipped(!flipped)}
           className="w-full bg-surface border border-border rounded-3xl p-10 text-center cursor-pointer hover:border-primary/40 transition-all min-h-48 flex flex-col items-center justify-center gap-3"
         >
           {!flipped ? (
             <>
               <p className="text-4xl font-bold text-foreground">{card.front}</p>
-              <p className="text-xs text-muted mt-2">Tap to reveal</p>
+              <p className="text-xs text-muted mt-2">Tippen zum Aufdecken</p>
             </>
           ) : (
             <>
-              <p className="text-2xl font-semibold text-primary">{card.back}</p>
-              <p className="text-sm text-muted italic mt-2">{card.example}</p>
+              <p className="text-3xl font-bold text-foreground">{card.front}</p>
+              <p className="text-sm text-muted italic">{card.example}</p>
+              {/* hover/tap to see English translation */}
+              <span className="group relative mt-2 inline-block">
+                <span className="text-xs text-primary underline decoration-dotted cursor-help">
+                  Übersetzung anzeigen
+                </span>
+                <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-3 py-1.5 bg-foreground text-background text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity">
+                  {card.back}
+                </span>
+              </span>
             </>
           )}
-        </button>
+        </div>
         <button
           onClick={() => {
             if (isLast) advance();
