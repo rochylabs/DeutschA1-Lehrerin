@@ -17,7 +17,8 @@ export default function PlanPage() {
   const [startUnit, setStartUnit] = useState(1);
 
   useEffect(() => {
-    const lvl = localStorage.getItem("genau_level") as "A1.1" | "A1.2" | null;
+    const raw = localStorage.getItem("genau_level");
+    const lvl = (raw === "A1.1" || raw === "A1.2") ? raw : null;
     const xpVal = Number(localStorage.getItem("genau_xp") ?? 0);
     const completed = JSON.parse(localStorage.getItem("genau_completed") ?? "[]") as number[];
     setLevel(lvl);
