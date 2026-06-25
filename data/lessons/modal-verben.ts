@@ -26,18 +26,36 @@ const lesson: Lesson = {
     {
       type: "fill_blank",
       exercises: [
-        { sentence: "Ich ___ Deutsch sprechen.", answer: "kann", hint: "I can (können, ich form)" },
-        { sentence: "Du ___ jetzt gehen.", answer: "musst", hint: "You must (müssen, du form)" },
-        { sentence: "Er ___ nach Hause fahren.", answer: "will", hint: "He wants to (wollen, er form)" },
-        { sentence: "Wir ___ heute nicht arbeiten.", answer: "können", hint: "We can (können, wir form)" },
+        { sentence: "Ich ___ Deutsch sprechen.", answer: "kann", hint: "I can (können, ich form)", explanation: "'Kann' is the ich-form of 'können'. Modal verbs are irregular — the ich and er/sie/es forms are identical (no -e or -t ending)." },
+        { sentence: "Du ___ jetzt gehen.", answer: "musst", hint: "You must (müssen, du form)", explanation: "'Musst' is the du-form of 'müssen'. The du-form of modals adds -st: kann → kannst, muss → musst, will → willst." },
+        { sentence: "Er ___ nach Hause fahren.", answer: "will", hint: "He wants to (wollen, er form)", explanation: "'Will' is the er/sie/es form of 'wollen'. Note: the infinitive 'fahren' goes to the very end of the sentence." },
+        { sentence: "Wir ___ heute nicht arbeiten.", answer: "können", hint: "We can (können, wir form)", explanation: "The wir-form of modals equals the infinitive: können → wir können. The second verb 'arbeiten' goes to the end." },
       ],
     },
     {
       type: "quiz",
       questions: [
-        { question: "Where does the main verb go with a modal verb?", options: ["At the beginning", "After the modal", "At the end", "In the middle"], answer: "At the end" },
-        { question: "What does 'Ich muss arbeiten' mean?", options: ["I can work.", "I want to work.", "I must work.", "I like to work."], answer: "I must work." },
-        { question: "Complete: 'Sie ___ gut kochen.' (can)", options: ["kann", "muss", "will", "kannst"], answer: "kann" },
+        {
+          question: "Wo steht das Hauptverb bei einem Modalverb?",
+          hint: "Where does the main verb go with a modal verb?",
+          options: ["At the beginning", "After the modal", "At the end", "In the middle"],
+          answer: "At the end",
+          explanation: "With modal verbs, the infinitive always goes to the very end: Ich kann heute nicht kommen. This is a core rule of German word order.",
+        },
+        {
+          question: "Was bedeutet 'Ich muss arbeiten'?",
+          hint: "What does 'Ich muss arbeiten' mean?",
+          options: ["I can work.", "I want to work.", "I must work.", "I like to work."],
+          answer: "I must work.",
+          explanation: "'Müssen' expresses obligation or necessity — 'must' or 'have to'. 'Ich muss arbeiten' = I have to / must work.",
+        },
+        {
+          question: "Ergänze: 'Sie ___ gut kochen.' (can)",
+          hint: "Complete: 'Sie ___ gut kochen.' (can)",
+          options: ["kann", "muss", "will", "kannst"],
+          answer: "kann",
+          explanation: "The er/sie/es form of 'können' is 'kann' — same as the ich form. Modal verbs are special: ich/er/sie/es all share the same form.",
+        },
       ],
     },
   ],

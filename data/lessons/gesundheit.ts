@@ -30,21 +30,25 @@ const lesson: Lesson = {
           sentence: "Mir tut der ___ weh. Ich glaube, ich habe zu viel getragen.",
           answer: "Rücken",
           hint: "the body part between shoulders and hips",
+          explanation: "'Mir tut … weh' means '… hurts me'. The body part stays in nominative after 'tut … weh'. 'Rücken' (back) is masculine: der Rücken.",
         },
         {
           sentence: "Ich habe ___ — 38,5 Grad. Ich bleibe heute zu Hause.",
           answer: "Fieber",
           hint: "high body temperature",
+          explanation: "'Ich habe Fieber' is the standard phrase for having a fever. Unlike English, German doesn't say 'a fever' here — 'Fieber' is used without an article.",
         },
         {
           sentence: "Können Sie mir etwas gegen ___ geben? Ich huste schon seit drei Tagen.",
           answer: "Husten",
           hint: "a cough",
+          explanation: "'Gegen + Akkusativ' means 'against / for'. 'Etwas gegen Husten' = something for a cough. 'Husten' is masculine (der Husten).",
         },
         {
           sentence: "Ich brauche einen ___ beim Arzt. Wann haben Sie Zeit?",
           answer: "Termin",
           hint: "an appointment",
+          explanation: "'Termin' is masculine (der Termin). 'Beim Arzt' = at the doctor's — 'beim' is a contraction of 'bei dem' (dative masculine).",
         },
       ],
     },
@@ -52,7 +56,8 @@ const lesson: Lesson = {
       type: "quiz",
       questions: [
         {
-          question: "How do you say 'My leg hurts' in German?",
+          question: "Wie sagt man 'My leg hurts' auf Deutsch?",
+          hint: "How do you say 'My leg hurts' in German?",
           options: [
             "Mein Bein tut weh.",
             "Ich habe Bein.",
@@ -60,9 +65,11 @@ const lesson: Lesson = {
             "Mein Bein hat Schmerz.",
           ],
           answer: "Mein Bein tut weh.",
+          explanation: "'Tut weh' comes from 'wehtun' (to hurt). The structure is: [body part] + tut weh. Or alternatively: 'Mir tut das Bein weh.'",
         },
         {
-          question: "Where do you go to pick up prescription medicine in Germany?",
+          question: "Wo bekommt man in Deutschland verschreibungspflichtige Medikamente?",
+          hint: "Where do you go to pick up prescription medicine in Germany?",
           options: [
             "In die Apotheke",
             "In das Krankenhaus",
@@ -70,9 +77,11 @@ const lesson: Lesson = {
             "In die Schule",
           ],
           answer: "In die Apotheke",
+          explanation: "In Germany, all medicines — including over-the-counter drugs — are sold exclusively at pharmacies (Apotheken), not at supermarkets or drugstores.",
         },
         {
-          question: "What do you need to bring to a doctor's appointment in Germany?",
+          question: "Was muss man zum Arzttermin in Deutschland mitbringen?",
+          hint: "What do you need to bring to a doctor's appointment in Germany?",
           options: [
             "Krankenversicherungskarte",
             "Führerschein",
@@ -80,6 +89,7 @@ const lesson: Lesson = {
             "Bargeld nur",
           ],
           answer: "Krankenversicherungskarte",
+          explanation: "Your Krankenversicherungskarte (health insurance card) is required at every doctor's visit in Germany. Without it, you may have to pay upfront and claim back later.",
         },
       ],
     },

@@ -30,21 +30,25 @@ const lesson: Lesson = {
           sentence: "Ich ___ gern ein Zimmer reservieren. Haben Sie noch etwas frei?",
           answer: "würde",
           hint: "würde + infinitiv = would like to",
+          explanation: "'Würde + infinitive' is the go-to Konjunktiv II pattern. It's like English 'would': Ich würde = I would. The infinitive 'reservieren' goes to the end.",
         },
         {
           sentence: "___ Sie mir bitte sagen, wo der Bahnhof ist?",
           answer: "Könnten",
           hint: "polite 'could you'",
+          explanation: "'Könnten Sie…?' (Could you…?) is a very polite way to make a request. It is the Konjunktiv II of 'können'. Always more polite than 'Können Sie…?'",
         },
         {
           sentence: "Wenn ich mehr Geld ___, würde ich eine größere Wohnung mieten.",
           answer: "hätte",
           hint: "Konjunktiv II of haben",
+          explanation: "'Hätte' is the Konjunktiv II of 'haben'. In 'wenn' clauses expressing hypotheticals, Konjunktiv II is used: Wenn ich … hätte, würde ich…",
         },
         {
           sentence: "Das ___ wirklich praktisch! Danke für den Tipp.",
           answer: "wäre",
           hint: "Konjunktiv II of sein",
+          explanation: "'Wäre' is the Konjunktiv II of 'sein'. 'Das wäre toll/super/praktisch' is a common way to express that something would be great.",
         },
       ],
     },
@@ -52,7 +56,8 @@ const lesson: Lesson = {
       type: "quiz",
       questions: [
         {
-          question: "Which sentence is the most polite way to ask for help?",
+          question: "Welcher Satz ist die höflichste Art, um Hilfe zu bitten?",
+          hint: "Which sentence is the most polite way to ask for help?",
           options: [
             "Könnten Sie mir helfen?",
             "Hilf mir!",
@@ -60,9 +65,11 @@ const lesson: Lesson = {
             "Du musst mir helfen.",
           ],
           answer: "Könnten Sie mir helfen?",
+          explanation: "'Könnten Sie…?' (Konjunktiv II) is more polite than 'Können Sie…?' (present tense). The Konjunktiv II adds a softening, hypothetical quality that signals politeness.",
         },
         {
-          question: "How do you say 'I would like to go to Berlin' using Konjunktiv II?",
+          question: "Wie sagt man 'I would like to go to Berlin' mit Konjunktiv II?",
+          hint: "How do you say 'I would like to go to Berlin' using Konjunktiv II?",
           options: [
             "Ich würde gern nach Berlin fahren.",
             "Ich werde gern nach Berlin fahren.",
@@ -70,9 +77,11 @@ const lesson: Lesson = {
             "Ich möchte gern nach Berlin fahren worden.",
           ],
           answer: "Ich würde gern nach Berlin fahren.",
+          explanation: "'Würde + infinitive' is the standard Konjunktiv II pattern for most verbs. 'Gern' softens the wish further. The infinitive 'fahren' goes to the end.",
         },
         {
-          question: "'Hätte' is the Konjunktiv II form of which verb?",
+          question: "'Hätte' ist die Konjunktiv-II-Form von welchem Verb?",
+          hint: "'Hätte' is the Konjunktiv II form of which verb?",
           options: [
             "haben",
             "sein",
@@ -80,6 +89,7 @@ const lesson: Lesson = {
             "halten",
           ],
           answer: "haben",
+          explanation: "'Hätte' = Konjunktiv II of 'haben'. Key Konjunktiv II forms to know: hätte (haben), wäre (sein), könnte (können), würde (werden/general).",
         },
       ],
     },

@@ -30,21 +30,25 @@ const lesson: Lesson = {
           sentence: "Das ist die Wohnung, ___ ich mieten möchte.",
           answer: "die",
           hint: "die Wohnung is feminine",
+          explanation: "The relative pronoun matches the gender of the noun it refers to. 'Wohnung' is feminine (die), so the relative pronoun is also 'die'.",
         },
         {
           sentence: "Ich habe den Brief, ___ du geschrieben hast, bekommen.",
           answer: "den",
           hint: "der Brief → accusative relative pronoun",
+          explanation: "'Brief' is masculine (der Brief). Inside the relative clause, the pronoun is the direct object → accusative masculine: den. Same change as der → den.",
         },
         {
           sentence: "Das ist das Restaurant, ___ meine Kollegin empfohlen hat.",
           answer: "das",
           hint: "das Restaurant is neuter",
+          explanation: "'Restaurant' is neuter (das Restaurant). As the direct object in the relative clause (accusative), neuter stays 'das' — neuter doesn't change in accusative.",
         },
         {
           sentence: "Die Leute, ___ neben uns wohnen, sind sehr freundlich.",
           answer: "die",
           hint: "plural relative pronoun",
+          explanation: "Plural nouns use 'die' as the relative pronoun in the nominative — regardless of the gender of the individual nouns.",
         },
       ],
     },
@@ -52,7 +56,8 @@ const lesson: Lesson = {
       type: "quiz",
       questions: [
         {
-          question: "Where does the verb go in a relative clause?",
+          question: "Wo steht das Verb im Relativsatz?",
+          hint: "Where does the verb go in a relative clause?",
           options: [
             "At the end of the relative clause",
             "In second position, as usual",
@@ -60,9 +65,11 @@ const lesson: Lesson = {
             "At the beginning of the relative clause",
           ],
           answer: "At the end of the relative clause",
+          explanation: "Like all subordinate clauses, the verb goes to the end of the relative clause. The relative pronoun comes first, then everything else, then the verb.",
         },
         {
-          question: "Which relative pronoun fits? 'Das ist der Mann, ___ hier arbeitet.'",
+          question: "Welches Relativpronomen passt? 'Das ist der Mann, ___ hier arbeitet.'",
+          hint: "Which relative pronoun fits? 'Das ist der Mann, ___ hier arbeitet.'",
           options: [
             "der",
             "die",
@@ -70,9 +77,11 @@ const lesson: Lesson = {
             "den",
           ],
           answer: "der",
+          explanation: "'Mann' is masculine (der Mann). As the subject of the relative clause, the pronoun is nominative masculine: 'der'. Use 'den' only when it's the direct object.",
         },
         {
-          question: "Which sentence is grammatically correct?",
+          question: "Welcher Satz ist grammatisch korrekt?",
+          hint: "Which sentence is grammatically correct?",
           options: [
             "Das ist die Frau, die neben mir wohnt.",
             "Das ist die Frau, der neben mir wohnt.",
@@ -80,6 +89,7 @@ const lesson: Lesson = {
             "Das ist die Frau, den neben mir wohnt.",
           ],
           answer: "Das ist die Frau, die neben mir wohnt.",
+          explanation: "'Frau' is feminine (die Frau). As the subject of the relative clause (nominative), the pronoun is 'die'. Only 'die' matches the gender here.",
         },
       ],
     },

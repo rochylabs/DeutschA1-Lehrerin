@@ -30,21 +30,25 @@ const lesson: Lesson = {
           sentence: "Der Bus ___ um 8:30 Uhr ___. (abfahren)",
           answer: "fährt … ab",
           hint: "abfahren → fährt … ab",
+          explanation: "In a main clause, separable verbs split: the conjugated verb stays in position 2, the prefix goes to the very end. 'Abfahren' → 'fährt … ab'.",
         },
         {
           sentence: "Kannst du mich bitte ___? Meine Nummer ist 0176 123456. (anrufen)",
           answer: "anrufen",
           hint: "anrufen stays together after modal verbs",
+          explanation: "After a modal verb (kann, muss, will…), the separable verb stays together as one infinitive at the end: kannst … anrufen.",
         },
         {
           sentence: "Wir ___ jeden Freitag im Supermarkt ___. (einkaufen)",
           answer: "kaufen … ein",
           hint: "einkaufen → kaufen … ein",
+          explanation: "'Einkaufen' splits into 'kaufen' (stays in position 2) and 'ein' (goes to the end). The prefix 'ein-' tells us this is shopping, not just buying.",
         },
         {
           sentence: "Der neue Job ___ nächsten Montag ___. (anfangen)",
           answer: "fängt … an",
           hint: "anfangen → fängt … an",
+          explanation: "'Anfangen' is irregular: the stem 'fang' gets an umlaut → 'fängt'. The prefix 'an' goes to the end. Irregular stems are worth memorising.",
         },
       ],
     },
@@ -52,7 +56,8 @@ const lesson: Lesson = {
       type: "quiz",
       questions: [
         {
-          question: "Where does the separable prefix go in a main clause?",
+          question: "Wohin geht das trennbare Präfix im Hauptsatz?",
+          hint: "Where does the separable prefix go in a main clause?",
           options: [
             "At the very end of the sentence",
             "Directly before the verb",
@@ -60,9 +65,11 @@ const lesson: Lesson = {
             "It stays attached to the verb",
           ],
           answer: "At the very end of the sentence",
+          explanation: "The separable prefix always goes to the very end of the main clause. Everything else — objects, adverbs, negation — comes before the prefix.",
         },
         {
-          question: "Which sentence is correct?",
+          question: "Welcher Satz ist grammatisch richtig?",
+          hint: "Which sentence is correct?",
           options: [
             "Ich stehe um 7 auf.",
             "Ich aufstehe um 7.",
@@ -70,9 +77,11 @@ const lesson: Lesson = {
             "Ich stehe um auf 7.",
           ],
           answer: "Ich stehe um 7 auf.",
+          explanation: "'Aufstehen' → 'stehe … auf'. The prefix 'auf' goes to the very end. 'Um 7' (at 7) comes before the prefix because the prefix is always last.",
         },
         {
-          question: "After a modal verb (kann, muss…), the separable verb…",
+          question: "Nach einem Modalverb (kann, muss…) wird das trennbare Verb…",
+          hint: "After a modal verb (kann, muss…), the separable verb…",
           options: [
             "goes to the end as one word",
             "splits and the prefix goes last",
@@ -80,6 +89,7 @@ const lesson: Lesson = {
             "moves to second position",
           ],
           answer: "goes to the end as one word",
+          explanation: "After a modal, the separable verb stays intact as an infinitive at the end: Ich muss früh aufstehen. It only splits in simple sentences without a modal.",
         },
       ],
     },

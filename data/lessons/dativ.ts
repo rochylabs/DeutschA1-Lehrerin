@@ -70,21 +70,25 @@ const lesson: Lesson = {
           sentence: "Ich fahre ___ dem Zug nach Berlin.",
           answer: "mit",
           hint: "preposition meaning 'by/with' (transport)",
+          explanation: "'Mit' always takes the dative case. 'Mit dem Zug' = by train. Other transport preposition: 'mit dem Bus', 'mit dem Auto'.",
         },
         {
           sentence: "Sie wohnt ___ ihrer Mutter.",
           answer: "bei",
           hint: "preposition meaning 'at someone's place'",
+          explanation: "'Bei' always takes dative and means 'at someone's place' or 'near'. 'Bei ihrer Mutter' = at her mother's place.",
         },
         {
           sentence: "Ich lerne seit zwei ___ Deutsch.",
           answer: "Jahren",
           hint: "dative plural of Jahr (year)",
+          explanation: "After 'seit', the noun takes dative plural. Dative plural in German always adds -n to the plural form: Jahre → Jahren.",
         },
         {
           sentence: "Er gibt ___ Frau die Schlüssel.",
           answer: "der",
           hint: "dative article for feminine noun (die Frau → der Frau)",
+          explanation: "In the dative case, feminine 'die' changes to 'der': die Frau → der Frau. This is a common point of confusion — the dative feminine looks like the masculine nominative!",
         },
       ],
     },
@@ -92,7 +96,8 @@ const lesson: Lesson = {
       type: "quiz",
       questions: [
         {
-          question: "Which sentence uses the dative correctly?",
+          question: "Welcher Satz verwendet den Dativ richtig?",
+          hint: "Which sentence uses the dative correctly?",
           options: [
             "Ich gehe zu der Arzt.",
             "Ich gehe zum Arzt.",
@@ -100,14 +105,18 @@ const lesson: Lesson = {
             "Ich gehe zu dem Arztes.",
           ],
           answer: "Ich gehe zum Arzt.",
+          explanation: "'Zum' is a contraction of 'zu dem' (dative masculine). 'Arzt' is masculine, so 'zu dem Arzt' → 'zum Arzt'. Always use contractions in natural speech.",
         },
         {
-          question: "Which preposition always takes the dative?",
+          question: "Welche Präposition nimmt immer den Dativ?",
+          hint: "Which preposition always takes the dative?",
           options: ["durch", "für", "mit", "ohne"],
           answer: "mit",
+          explanation: "'Mit' always takes dative. Easy memory trick for dative prepositions: 'mit, nach, bei, von, seit, zu, aus, gegenüber' — learn them as a fixed list.",
         },
         {
-          question: "How do you say 'I have been here since three months'?",
+          question: "Wie sagt man 'I have been here since three months'?",
+          hint: "How do you say 'I have been here since three months'?",
           options: [
             "Ich bin seit drei Monaten hier.",
             "Ich bin für drei Monaten hier.",
@@ -115,6 +124,7 @@ const lesson: Lesson = {
             "Ich bin nach drei Monaten hier.",
           ],
           answer: "Ich bin seit drei Monaten hier.",
+          explanation: "'Seit' + dative expresses an ongoing period of time still in progress. 'Monaten' is dative plural of Monat. Use present tense with 'seit' in German (not past tense like English).",
         },
       ],
     },

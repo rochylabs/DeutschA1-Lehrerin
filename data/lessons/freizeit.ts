@@ -30,21 +30,25 @@ const lesson: Lesson = {
           sentence: "Hast du ___, am Samstag ins Kino zu gehen?",
           answer: "Lust",
           hint: "Do you feel like…?",
+          explanation: "'Hast du Lust, …?' means 'Do you feel like …?' It's a friendly, casual invitation. The verb at the end takes 'zu + infinitive'.",
         },
         {
           sentence: "___ wir zusammen Sport machen? Ich gehe zum Schwimmbad.",
           answer: "Wollen",
           hint: "Shall we…?",
+          explanation: "'Wollen wir …?' (Shall we …?) is a great way to make a suggestion. The verb comes first because it's a yes/no question.",
         },
         {
           sentence: "Mein Lieblingshoby ist Musik ___. Ich höre jeden Tag Podcasts.",
           answer: "hören",
           hint: "listening to music",
+          explanation: "When a verb becomes a noun (gerund), it is capitalised in German: Musik hören → Mein Hobby ist Musik hören. Infinitives used as nouns are always neuter.",
         },
         {
           sentence: "Tut mir leid, ich habe leider keine ___. Vielleicht nächste Woche?",
           answer: "Zeit",
           hint: "I have no … to come",
+          explanation: "'Keine Zeit haben' means 'to have no time'. 'Zeit' is feminine (die Zeit), so 'keine' is used. 'Leider' (unfortunately) softens the refusal.",
         },
       ],
     },
@@ -52,7 +56,8 @@ const lesson: Lesson = {
       type: "quiz",
       questions: [
         {
-          question: "How do you invite a friend to go swimming in German?",
+          question: "Wie lädt man einen Freund zum Schwimmen ein?",
+          hint: "How do you invite a friend to go swimming in German?",
           options: [
             "Hast du Lust, schwimmen zu gehen?",
             "Magst du Schwimmen?",
@@ -60,9 +65,11 @@ const lesson: Lesson = {
             "Du sollst schwimmen kommen.",
           ],
           answer: "Hast du Lust, schwimmen zu gehen?",
+          explanation: "'Hast du Lust, … zu gehen?' is the natural German invitation. The structure 'zu + infinitive' is used after 'Lust haben' (feel like doing something).",
         },
         {
-          question: "How do you say 'My hobby is cooking' in German?",
+          question: "Wie sagt man 'My hobby is cooking' auf Deutsch?",
+          hint: "How do you say 'My hobby is cooking' in German?",
           options: [
             "Mein Hobby ist Kochen.",
             "Ich habe Hobby Kochen.",
@@ -70,9 +77,11 @@ const lesson: Lesson = {
             "Ich Hobby bin Kochen.",
           ],
           answer: "Mein Hobby ist Kochen.",
+          explanation: "In German, infinitives used as nouns are capitalised: kochen → Kochen. The sentence structure is 'Mein Hobby ist [noun].' — simple and correct.",
         },
         {
-          question: "Someone says 'Ich habe leider keine Zeit.' What do they mean?",
+          question: "Jemand sagt 'Ich habe leider keine Zeit.' Was meint er?",
+          hint: "Someone says 'Ich habe leider keine Zeit.' What do they mean?",
           options: [
             "They unfortunately can't make it.",
             "They are running late.",
@@ -80,6 +89,7 @@ const lesson: Lesson = {
             "They have plenty of free time.",
           ],
           answer: "They unfortunately can't make it.",
+          explanation: "'Ich habe leider keine Zeit' = I unfortunately have no time. 'Leider' (unfortunately) is a polite softener when declining an invitation.",
         },
       ],
     },

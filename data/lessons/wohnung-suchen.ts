@@ -30,21 +30,25 @@ const lesson: Lesson = {
           sentence: "Die ___ ist 700 Euro, plus 120 Euro Nebenkosten.",
           answer: "Kaltmiete",
           hint: "rent without utilities",
+          explanation: "'Kaltmiete' (cold rent) is rent without utilities. Add Nebenkosten (heating, water etc.) to get the Warmmiete (total monthly cost).",
         },
         {
           sentence: "Ich möchte gerne eine ___ für die Wohnung vereinbaren.",
           answer: "Besichtigung",
           hint: "to view the flat in person",
+          explanation: "'Besichtigung' (viewing) is feminine (die Besichtigung). 'Vereinbaren' means to arrange/schedule — a key verb for dealing with landlords.",
         },
         {
           sentence: "Vor dem Einzug muss ich die ___ von zwei Monatsmieten bezahlen.",
           answer: "Kaution",
           hint: "security deposit",
+          explanation: "'Kaution' (deposit) is usually 2–3 months of cold rent in Germany. It is refunded when you move out, provided there is no damage.",
         },
         {
           sentence: "Wir suchen eine Mitbewohnerin für unsere ___.",
           answer: "WG",
           hint: "shared flat abbreviation",
+          explanation: "'WG' stands for Wohngemeinschaft (shared flat). In German rental ads, abbreviations like WG, ZKB (Zimmer, Küche, Bad), and qm (Quadratmeter) are very common.",
         },
       ],
     },
@@ -52,7 +56,8 @@ const lesson: Lesson = {
       type: "quiz",
       questions: [
         {
-          question: "What does 'Warmmiete' include?",
+          question: "Was ist in der 'Warmmiete' enthalten?",
+          hint: "What does 'Warmmiete' include?",
           options: [
             "Rent plus utilities",
             "Only the base rent",
@@ -60,9 +65,11 @@ const lesson: Lesson = {
             "Internet and TV",
           ],
           answer: "Rent plus utilities",
+          explanation: "'Warmmiete' (warm rent) = Kaltmiete + Nebenkosten. It is the total monthly amount you pay, including heating and other utility costs.",
         },
         {
-          question: "You see an ad: '2 ZKB, 60m², KM 750€, NK 130€'. What is the total monthly cost?",
+          question: "Anzeige: '2 ZKB, 60m², KM 750€, NK 130€'. Was sind die monatlichen Gesamtkosten?",
+          hint: "You see an ad: '2 ZKB, 60m², KM 750€, NK 130€'. What is the total monthly cost?",
           options: [
             "880 Euro",
             "750 Euro",
@@ -70,9 +77,11 @@ const lesson: Lesson = {
             "620 Euro",
           ],
           answer: "880 Euro",
+          explanation: "KM (Kaltmiete) + NK (Nebenkosten) = total: 750 + 130 = 880 Euro. Always add NK to KM when calculating the real monthly cost of a German rental.",
         },
         {
-          question: "What is a 'Mietvertrag'?",
+          question: "Was ist ein 'Mietvertrag'?",
+          hint: "What is a 'Mietvertrag'?",
           options: [
             "A rental contract",
             "A deposit receipt",
@@ -80,6 +89,7 @@ const lesson: Lesson = {
             "A moving company",
           ],
           answer: "A rental contract",
+          explanation: "'Mietvertrag' = Miete (rent) + Vertrag (contract). It is the legal agreement between tenant and landlord. Read it carefully before signing!",
         },
       ],
     },

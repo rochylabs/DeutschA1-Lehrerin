@@ -30,21 +30,25 @@ const lesson: Lesson = {
           sentence: "Gestern ___ ich sehr früh aufgestanden. Der Zug fuhr um 6 Uhr ___.",
           answer: "bin … ab",
           hint: "aufstehen uses sein in Perfekt; abfahren splits",
+          explanation: "'Aufstehen' is a motion/change-of-state verb → takes 'sein' in Perfekt: bin aufgestanden. 'Abfahren' in Präteritum splits: fuhr … ab (prefix goes to end).",
         },
         {
           sentence: "Das ist das Formular, ___ Sie bitte ausfüllen müssen.",
           answer: "das",
           hint: "das Formular → neuter relative pronoun",
+          explanation: "The relative pronoun must match the gender of the noun it refers to. 'Formular' is neuter (das Formular) → relative pronoun 'das'. The verb 'müssen' goes to the end.",
         },
         {
           sentence: "Ich ___ gern einen Termin beim Arzt machen. Wann haben Sie Zeit?",
           answer: "würde",
           hint: "Konjunktiv II with würde",
+          explanation: "'Würde + infinitive' is the standard Konjunktiv II pattern. 'Ich würde gern…' is polite and natural — more formal than 'ich will' when making appointments.",
         },
         {
           sentence: "Seit ___ Jahren wohne ich in Deutschland. Ich spreche jetzt gut Deutsch.",
           answer: "zwei",
           hint: "seit + Dativ; any plausible number works — here: zwei",
+          explanation: "'Seit + Dativ' expresses an ongoing duration. 'Jahren' is the dative plural of 'Jahr'. Use present tense with 'seit' — not past tense as in English.",
         },
       ],
     },
@@ -52,7 +56,8 @@ const lesson: Lesson = {
       type: "quiz",
       questions: [
         {
-          question: "Which past tense is most common in everyday spoken German?",
+          question: "Welche Vergangenheitsform ist im deutschen Alltag am häufigsten?",
+          hint: "Which past tense is most common in everyday spoken German?",
           options: [
             "Perfekt",
             "Präteritum",
@@ -60,9 +65,11 @@ const lesson: Lesson = {
             "Plusquamperfekt",
           ],
           answer: "Perfekt",
+          explanation: "Perfekt is the standard spoken past tense in German. Exception: 'war', 'hatte', and modal verbs (konnte, musste…) are always used in Präteritum, even in conversation.",
         },
         {
-          question: "Which sentence uses Konjunktiv II correctly?",
+          question: "Welcher Satz verwendet den Konjunktiv II korrekt?",
+          hint: "Which sentence uses Konjunktiv II correctly?",
           options: [
             "Könnten Sie mir bitte helfen?",
             "Können Sie mir bitte helfen würden?",
@@ -70,9 +77,11 @@ const lesson: Lesson = {
             "Helfen könnten Sie mir?",
           ],
           answer: "Könnten Sie mir bitte helfen?",
+          explanation: "'Könnten Sie…?' is the correct Konjunktiv II form of 'können'. The verb goes in position 1 for a yes/no question: Könnten [verb] + Sie [subject] + …?",
         },
         {
-          question: "Choose the correct relative pronoun: 'Das ist der Kollege, ___ neben mir sitzt.'",
+          question: "Wähle das richtige Relativpronomen: 'Das ist der Kollege, ___ neben mir sitzt.'",
+          hint: "Choose the correct relative pronoun: 'Das ist der Kollege, ___ neben mir sitzt.'",
           options: [
             "der",
             "die",
@@ -80,6 +89,7 @@ const lesson: Lesson = {
             "den",
           ],
           answer: "der",
+          explanation: "'Kollege' is masculine (der Kollege). As the subject of the relative clause (nominative), the pronoun is 'der'. Use 'den' only when it's the direct object (accusative).",
         },
       ],
     },

@@ -30,21 +30,25 @@ const lesson: Lesson = {
           sentence: "Mein Zug hat leider 30 Minuten ___.",
           answer: "Verspätung",
           hint: "the train is running late",
+          explanation: "'Verspätung haben' (to have a delay) is the standard phrase for late transport in German. 'Der Zug hat 30 Minuten Verspätung' = the train is 30 minutes late.",
         },
         {
           sentence: "In Mannheim müssen Sie ___. Nehmen Sie dann die S3 Richtung Heidelberg.",
           answer: "umsteigen",
           hint: "change to another train",
+          explanation: "'Umsteigen' is a separable verb: um- + steigen. After a modal verb (müssen), it stays as one infinitive at the end. 'Umsteigen' = to change trains/buses.",
         },
         {
           sentence: "Ich möchte ein Zimmer für zwei Nächte ___.",
           answer: "reservieren",
           hint: "to reserve a room",
+          explanation: "'Reservieren' means to reserve/book in advance. After 'möchte', the infinitive goes to the end. Use it for hotels, restaurants, and appointments.",
         },
         {
           sentence: "Ihr Flug geht von ___ 12B. Bitte gehen Sie zur Sicherheitskontrolle.",
           answer: "Gleis",
           hint: "platform / gate number",
+          explanation: "'Gleis' (platform/track) is neuter (das Gleis). At airports the equivalent word is 'Gate'. 'Von Gleis 7' = from platform 7.",
         },
       ],
     },
@@ -52,7 +56,8 @@ const lesson: Lesson = {
       type: "quiz",
       questions: [
         {
-          question: "You hear: 'Der ICE 507 hat heute leider 45 Minuten Verspätung.' What does this mean?",
+          question: "Du hörst: 'Der ICE 507 hat heute leider 45 Minuten Verspätung.' Was bedeutet das?",
+          hint: "You hear: 'Der ICE 507 hat heute leider 45 Minuten Verspätung.' What does this mean?",
           options: [
             "The train is 45 minutes late.",
             "The train leaves in 45 minutes.",
@@ -60,9 +65,11 @@ const lesson: Lesson = {
             "The train is 45 minutes early.",
           ],
           answer: "The train is 45 minutes late.",
+          explanation: "'Verspätung' means delay. 'Hat 45 Minuten Verspätung' = is 45 minutes late. 'Leider' (unfortunately) is the polite filler Germans add when giving bad news.",
         },
         {
-          question: "How do you politely ask for help when lost?",
+          question: "Wie bittet man höflich um Hilfe, wenn man sich verirrt hat?",
+          hint: "How do you politely ask for help when lost?",
           options: [
             "Können Sie mir helfen?",
             "Helfen Sie jetzt!",
@@ -70,9 +77,11 @@ const lesson: Lesson = {
             "Ich brauche Hilfe sofort.",
           ],
           answer: "Können Sie mir helfen?",
+          explanation: "'Können Sie mir helfen?' (Can you help me?) is polite and universally understood. For extra politeness, use Konjunktiv II: 'Könnten Sie mir helfen?'",
         },
         {
-          question: "What does 'umsteigen' mean in the context of public transport?",
+          question: "Was bedeutet 'umsteigen' im öffentlichen Nahverkehr?",
+          hint: "What does 'umsteigen' mean in the context of public transport?",
           options: [
             "To change trains or buses",
             "To buy a ticket",
@@ -80,6 +89,7 @@ const lesson: Lesson = {
             "To book a flight",
           ],
           answer: "To change trains or buses",
+          explanation: "'Umsteigen' = to transfer/change from one line to another. You'll hear it constantly on German trains and buses: 'Bitte umsteigen!'",
         },
       ],
     },

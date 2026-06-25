@@ -26,18 +26,36 @@ const lesson: Lesson = {
     {
       type: "fill_blank",
       exercises: [
-        { sentence: "Ich kaufe ___ Apfel. (der Apfel)", answer: "einen", hint: "Masculine indefinite article in accusative" },
-        { sentence: "Ich sehe ___ Frau. (die Frau)", answer: "die", hint: "Feminine article — no change in accusative" },
-        { sentence: "Er braucht ___ Stift. (der Stift)", answer: "einen", hint: "Masculine indefinite article in accusative" },
-        { sentence: "Wir kaufen ___ Brot. (das Brot)", answer: "das", hint: "Neuter article — no change in accusative" },
+        { sentence: "Ich kaufe ___ Apfel. (der Apfel)", answer: "einen", hint: "Masculine indefinite article in accusative", explanation: "'Apfel' is masculine (der Apfel). In the accusative case, 'ein' becomes 'einen' for masculine nouns — the only indefinite article that changes." },
+        { sentence: "Ich sehe ___ Frau. (die Frau)", answer: "die", hint: "Feminine article — no change in accusative", explanation: "Feminine articles don't change in the accusative: die → die. Only masculine definite 'der' and indefinite 'ein' change." },
+        { sentence: "Er braucht ___ Stift. (der Stift)", answer: "einen", hint: "Masculine indefinite article in accusative", explanation: "'Stift' is masculine (der Stift), so the accusative indefinite article is 'einen'. Masculine is the only gender that changes: ein → einen." },
+        { sentence: "Wir kaufen ___ Brot. (das Brot)", answer: "das", hint: "Neuter article — no change in accusative", explanation: "Neuter articles don't change in the accusative: das → das. Only masculine changes (der → den, ein → einen)." },
       ],
     },
     {
       type: "quiz",
       questions: [
-        { question: "Which article changes in the accusative case?", options: ["die", "das", "der", "All of them"], answer: "der" },
-        { question: "Complete: 'Ich sehe ___ Mann.'", options: ["der", "die", "den", "dem"], answer: "den" },
-        { question: "What does accusative mark?", options: ["The subject", "The indirect object", "The direct object", "Possession"], answer: "The direct object" },
+        {
+          question: "Welcher Artikel ändert sich im Akkusativ?",
+          hint: "Which article changes in the accusative case?",
+          options: ["die", "das", "der", "All of them"],
+          answer: "der",
+          explanation: "Only masculine 'der' changes in the accusative: der → den. Feminine (die) and neuter (das) stay the same. This is a key rule to memorise.",
+        },
+        {
+          question: "Ergänze: 'Ich sehe ___ Mann.'",
+          hint: "Complete: 'Ich sehe ___ Mann.'",
+          options: ["der", "die", "den", "dem"],
+          answer: "den",
+          explanation: "'Mann' is masculine (der Mann). As the direct object of 'sehen', it is in the accusative: der → den. 'Dem' is dative, not accusative.",
+        },
+        {
+          question: "Was markiert der Akkusativ?",
+          hint: "What does accusative mark?",
+          options: ["The subject", "The indirect object", "The direct object", "Possession"],
+          answer: "The direct object",
+          explanation: "The accusative marks the direct object — the person or thing directly receiving the action. Ask 'Wen? Was?' (Whom? What?) to find it.",
+        },
       ],
     },
   ],
