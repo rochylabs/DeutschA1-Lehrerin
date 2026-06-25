@@ -19,6 +19,7 @@ export interface FillBlankExercise {
   sentence: string;
   answer: string;
   hint: string;
+  explanation?: string;
 }
 
 export interface FillBlankScreen {
@@ -28,8 +29,10 @@ export interface FillBlankScreen {
 
 export interface QuizQuestion {
   question: string;
+  hint?: string;
   options: string[];
   answer: string;
+  explanation?: string;
 }
 
 export interface QuizScreen {

@@ -168,7 +168,13 @@ export default function LearnPage({ params }: { params: Promise<{ unit: string }
     return (
       <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6 max-w-md mx-auto">
         <div className="text-sm text-muted">{fillIdx + 1} / {exercises.length}</div>
-        <p className="text-xs text-muted">{ex.hint}</p>
+        {/* hint as hover tooltip */}
+        <span className="group relative inline-block">
+          <span className="text-xs text-primary underline decoration-dotted cursor-help">Hilfe anzeigen</span>
+          <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-3 py-1.5 bg-foreground text-background text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity z-10">
+            {ex.hint}
+          </span>
+        </span>
         <div className="text-xl font-semibold text-foreground text-center">
           {parts[0]}
           <input
@@ -185,9 +191,12 @@ export default function LearnPage({ params }: { params: Promise<{ unit: string }
           {parts[1]}
         </div>
         {fillResult === "wrong" && (
-          <p className="text-sm text-red-500">Correct answer: <strong>{ex.answer}</strong></p>
+          <div className="w-full rounded-2xl border border-red-200 bg-red-50 p-4 text-sm text-left space-y-1">
+            <p className="text-red-600 font-medium">Richtige Antwort: <strong>{ex.answer}</strong></p>
+            {ex.explanation && <p className="text-red-500">{ex.explanation}</p>}
+          </div>
         )}
-        {fillResult === "correct" && <p className="text-sm text-green-600">Richtig! ✓</p>}
+        {fillResult === "correct" && <p className="text-sm text-green-600 font-medium">Richtig! ✓</p>}
         <button
           onClick={() => {
             if (!fillResult) {
@@ -217,7 +226,17 @@ export default function LearnPage({ params }: { params: Promise<{ unit: string }
     return (
       <div className="flex flex-col min-h-screen px-6 py-10 max-w-md mx-auto gap-6">
         <div className="text-sm text-muted">{quizIdx + 1} / {questions.length}</div>
-        <h2 className="text-xl font-semibold text-foreground leading-snug">{q.question}</h2>
+        <div>
+          <h2 className="text-xl font-semibold text-foreground leading-snug">{q.question}</h2>
+          {q.hint && (
+            <span className="group relative inline-block mt-1">
+              <span className="text-xs text-primary underline decoration-dotted cursor-help">Auf Englisch</span>
+              <span className="absolute bottom-full left-0 mb-1 px-3 py-1.5 bg-foreground text-background text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity z-10">
+                {q.hint}
+              </span>
+            </span>
+          )}
+        </div>
         <div className="flex flex-col gap-3">
           {q.options.map((opt) => {
             let style = "border-border bg-surface hover:border-primary/40";
@@ -238,11 +257,19 @@ export default function LearnPage({ params }: { params: Promise<{ unit: string }
             );
           })}
         </div>
+        {revealed && quizSelected !== q.answer && q.explanation && (
+          <div className="w-full rounded-2xl border border-red-200 bg-red-50 p-4 text-sm space-y-1">
+            <p className="text-red-600 font-medium">Richtige Antwort: <strong>{q.answer}</strong></p>
+            <p className="text-red-500">{q.explanation}</p>
+          </div>
+        )}
+        {revealed && quizSelected === q.answer && (
+          <p className="text-sm text-green-600 font-medium">Richtig! ✓</p>
+        )}
         <button
           onClick={() => {
             if (!revealed) {
               if (quizSelected === q.answer) setScore(score + 1);
-              // show reveal by keeping quizSelected set
             } else if (isLast) {
               advance();
             } else {
@@ -252,7 +279,7 @@ export default function LearnPage({ params }: { params: Promise<{ unit: string }
           disabled={!quizSelected}
           className="bg-primary text-white font-semibold px-8 py-3.5 rounded-full hover:bg-primary-light transition-colors disabled:opacity-40"
         >
-          {!revealed ? "Check" : isLast ? "Finish unit →" : "Next →"}
+          {!revealed ? "Prüfen" : isLast ? "Lektion beenden →" : "Weiter →"}
         </button>
       </div>
     );
