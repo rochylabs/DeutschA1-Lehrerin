@@ -3,10 +3,23 @@ import Anthropic from "@anthropic-ai/sdk";
 
 const client = new Anthropic();
 
-export async function POST(req: NextRequest) {
-  const { text, mcqScore, mcqLevel } = await req.json();
+const VALID_LEVELS = ["A1.1", "A1.2"] as const;
+type Level = (typeof VALID_LEVELS)[number];
 
-  if (!text || text.trim().length < 5) {
+export async function POST(req: NextRequest) {
+  if (!process.env.ANTHROPIC_API_KEY) {
+    return NextResponse.json({ feedback: null, level: "A1.1" });
+  }
+
+  const body = await req.json();
+  const mcqLevel: Level = VALID_LEVELS.includes(body.mcqLevel) ? body.mcqLevel : "A1.1";
+  const mcqScore = Math.min(15, Math.max(0, Number(body.mcqScore) || 0));
+  // sanitize: cap length, strip backticks and quotes to prevent prompt injection
+  const text = typeof body.text === "string"
+    ? body.text.slice(0, 500).replace(/[`"\\]/g, "")
+    : "";
+
+  if (text.trim().length < 5) {
     return NextResponse.json({ feedback: null, level: mcqLevel });
   }
 
@@ -40,7 +53,8 @@ Rules:
   try {
     const raw = (message.content[0] as { type: string; text: string }).text.trim();
     const parsed = JSON.parse(raw);
-    return NextResponse.json({ level: parsed.level ?? mcqLevel, feedback: parsed.feedback ?? null });
+    const level: Level = VALID_LEVELS.includes(parsed.level) ? parsed.level : mcqLevel;
+    return NextResponse.json({ level, feedback: parsed.feedback ?? null });
   } catch {
     return NextResponse.json({ level: mcqLevel, feedback: null });
   }

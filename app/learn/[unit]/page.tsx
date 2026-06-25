@@ -4,8 +4,10 @@ import { useRouter } from "next/navigation";
 import { UNITS } from "@/lib/units";
 import { Lesson, LessonScreen, FlashCard, FillBlankExercise, QuizQuestion } from "@/data/types";
 
-// ponytail: lazy dynamic import — only guten-tag has content for MVP; others fall through to placeholder
+const VALID_SLUGS = new Set(["guten-tag","ich-bin","meine-familie","artikel-nomen","wohnen","alltagsverben","zahlen-zeit","akkusativ","essen-trinken","modal-verben","in-der-stadt","a1-review"]);
+
 async function loadLesson(slug: string): Promise<Lesson | null> {
+  if (!VALID_SLUGS.has(slug)) return null;
   try {
     const mod = await import(`@/data/lessons/${slug}`);
     return mod.default as Lesson;
