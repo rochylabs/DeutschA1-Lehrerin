@@ -3,7 +3,7 @@ import Anthropic from "@anthropic-ai/sdk";
 
 const client = new Anthropic();
 
-const VALID_LEVELS = ["A1.1", "A1.2"] as const;
+const VALID_LEVELS = ["A1.1", "A1.2", "A2.1", "A2.2"] as const;
 type Level = (typeof VALID_LEVELS)[number];
 
 export async function POST(req: NextRequest) {
@@ -33,12 +33,12 @@ export async function POST(req: NextRequest) {
 
 The learner wrote: "${text}"
 
-Their MCQ quiz score placed them at ${mcqLevel} (A1.1 = total beginner, A1.2 = knows basics).
+Their MCQ quiz score placed them at ${mcqLevel} (A1.1 = total beginner, A1.2 = knows A1 basics, A2.1 = basic A2, A2.2 = solid A2).
 MCQ score: ${mcqScore}/15
 
 Respond with JSON only, no markdown:
 {
-  "level": "A1.1" | "A1.2",
+  "level": "A1.1" | "A1.2" | "A2.1" | "A2.2",
   "feedback": "2-3 encouraging sentences in simple English: what they did well, one specific thing to work on"
 }
 

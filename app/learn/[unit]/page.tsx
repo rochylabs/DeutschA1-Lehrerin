@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { UNITS } from "@/lib/units";
 import { Lesson, LessonScreen, FlashCard, FillBlankExercise, QuizQuestion } from "@/data/types";
 
-const VALID_SLUGS = new Set(["guten-tag","ich-bin","meine-familie","artikel-nomen","wohnen","alltagsverben","zahlen-zeit","akkusativ","essen-trinken","modal-verben","in-der-stadt","a1-review"]);
+const VALID_SLUGS = new Set(["guten-tag","ich-bin","meine-familie","artikel-nomen","wohnen","alltagsverben","zahlen-zeit","akkusativ","essen-trinken","modal-verben","in-der-stadt","a1-review","dativ","praeteritum","perfekt","trennbare-verben","wohnung-suchen","berufe-arbeit","gesundheit","reisen","freizeit","konjunktiv-ii","relativsaetze","a2-review"]);
 
 async function loadLesson(slug: string): Promise<Lesson | null> {
   if (!VALID_SLUGS.has(slug)) return null;
