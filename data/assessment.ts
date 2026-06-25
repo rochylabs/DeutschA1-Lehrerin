@@ -27,8 +27,7 @@ export const ASSESSMENT_QUESTIONS: Question[] = [
   { id: 15, type: "reading", question: "'Das Geschäft öffnet um acht Uhr morgens.' When does the shop open?", options: ["7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM"], answer: "8:00 AM" },
 ];
 
-export function scoreToLevel(correct: number): "A1.1" | "A1.2" | "A1.3" {
-  if (correct <= 5) return "A1.1";
-  if (correct <= 10) return "A1.2";
-  return "A1.3";
+export function scoreToLevel(correct: number): "A1.1" | "A1.2" {
+  if (correct <= 7) return "A1.1";
+  return "A1.2";
 }

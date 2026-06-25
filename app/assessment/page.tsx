@@ -13,7 +13,7 @@ export default function AssessmentPage() {
   const [selected, setSelected] = useState<string | null>(null);
   const [writingText, setWritingText] = useState("");
   const [aiFeedback, setAiFeedback] = useState<string | null>(null);
-  const [level, setLevel] = useState<"A1.1" | "A1.2" | "A1.3" | null>(null);
+  const [level, setLevel] = useState<"A1.1" | "A1.2" | null>(null);
 
   const q = ASSESSMENT_QUESTIONS[current];
   const total = ASSESSMENT_QUESTIONS.length;

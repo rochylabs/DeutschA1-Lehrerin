@@ -20,12 +20,12 @@ export async function POST(req: NextRequest) {
 
 The learner wrote: "${text}"
 
-Their MCQ quiz score placed them at ${mcqLevel} (A1.1 = total beginner, A1.2 = knows basics, A1.3 = near A1 complete).
+Their MCQ quiz score placed them at ${mcqLevel} (A1.1 = total beginner, A1.2 = knows basics).
 MCQ score: ${mcqScore}/15
 
 Respond with JSON only, no markdown:
 {
-  "level": "A1.1" | "A1.2" | "A1.3",
+  "level": "A1.1" | "A1.2",
   "feedback": "2-3 encouraging sentences in simple English: what they did well, one specific thing to work on"
 }
 
