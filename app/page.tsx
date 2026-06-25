@@ -14,7 +14,7 @@ export default function Home() {
       {/* Hero */}
       <section className="flex flex-col items-center justify-center flex-1 px-6 py-20 text-center gap-8">
         <div className="inline-flex items-center gap-2 bg-primary/10 text-primary text-sm font-medium px-4 py-1.5 rounded-full">
-          🇩🇪 Goethe A1 curriculum
+          🇩🇪 Goethe A1–A2 curriculum
         </div>
         <h1 className="text-4xl sm:text-5xl font-bold text-foreground leading-tight max-w-2xl">
           Learn German.<br />
